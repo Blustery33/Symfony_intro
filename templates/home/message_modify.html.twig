@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un message{% endblock %}
+
+{% block body %}
+    <a href="{{path('app_home_index')}}" style="font-size: 1.75rem">Accueil</a>
+    <div style="text-align: center"><h1>Modifier votre message</h1></div>
+    <div style="text-align: center">
+        <form method="post">
+            <div>
+                <textarea name="message" rows="10" cols="60">{{ message[0].text }}</textarea>
+            </div>
+            <div>
+                <button style="font-size: 1.25em">Valider</button>
+            </div>
+        </form>
+        <button><a href="{{ path('app_home_sujet_id', {id : message[0].sujet.id}) }}">Retour</a></button>
+
+    </div>
+{% endblock %}

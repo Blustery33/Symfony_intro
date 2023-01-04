@@ -3,12 +3,13 @@
 {% block title %}Créer un message{% endblock %}
 
 {% block body %}
+    <a href="{{path('app_home_index')}}" style="font-size: 1.75rem">Accueil</a>
     <div style="text-align: center"><h1>Créer un message</h1></div>
     <div style="text-align: center">
         <form method="post">
             <div style="display: flex;align-items: center;flex-direction: column;">
                 <label style="font-size: 1.5rem" for="sujet">Sélectionner un sujet</label>
-                <select id="sujet">
+                <select style="font-size: 20px;margin: 20px;" id="sujet" name="sujet">
                     <option value="">choississer un sujet</option>
                     {% for sujet in sujets %}
                     <option value="{{ sujet.id }}">{{ sujet.title }}</option>
@@ -16,7 +17,10 @@
                 </select>
             </div>
             <div>
-                <button>Validé</button>
+                <textarea name="message" rows="10" cols="60"></textarea>
+            </div>
+            <div>
+                <button style="font-size: 1.25em">Valider</button>
             </div>
 
         </form>
