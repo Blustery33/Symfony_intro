@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block body %}
+    <div>
+        <div><a href="{{path('app_home_sujet')}}">Créer un sujet</a></div>
+        <div><a href="{{ path('app_home_message') }}">Créer un message</a></div>
+    </div>
+    <div style="text-align: center">
+        <h1>Liste des sujets</h1>
+    </div>
+    <div>
+        <ul>
+            {% for sujet in sujets %}
+            <li style="font-size: 2rem">
+                <a href="{{path('app_home_sujet_id', { id: sujet.id })}}">{{ sujet.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

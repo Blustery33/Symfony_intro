@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un sujet{% endblock %}
+
+{% block body %}
+    <h1>Créer un sujet</h1>
+    <div>
+        <div>
+            <form method="post">
+                <label for="sujet">Sujet</label>
+                <input id="id" type="text" name="sujet">
+                <button>Valider</button>
+            </form>
+        </div>
+    </div>
+
+    <a href="{{path('app_home_index')}}">Accueil</a>
+{% endblock %}

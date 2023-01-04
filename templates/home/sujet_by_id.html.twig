@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block body %}
+    <div><a href="/home">Accueil</a> </div>
+    <div style="text-align: center"><h1>Titre du Sujet</h1></div>
+<div style="font-size: 1.5rem; text-align: center">
+    {{ sujet[0].title }}
+</div>
+{% endblock %}

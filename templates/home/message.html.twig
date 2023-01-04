@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un message{% endblock %}
+
+{% block body %}
+    <div style="text-align: center"><h1>Créer un message</h1></div>
+    <div style="text-align: center">
+        <form method="post">
+            <div style="display: flex;align-items: center;flex-direction: column;">
+                <label style="font-size: 1.5rem" for="sujet">Sélectionner un sujet</label>
+                <select id="sujet">
+                    <option value="">choississer un sujet</option>
+                    {% for sujet in sujets %}
+                    <option value="{{ sujet.id }}">{{ sujet.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <button>Validé</button>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}
