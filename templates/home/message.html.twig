@@ -12,7 +12,7 @@
         <form method="post">
             <div style="display: flex;align-items: center;flex-direction: column;">
                 <label style="font-size: 1.5rem" for="sujet">Sélectionner un sujet</label>
-                <select style="font-size: 20px;margin: 20px;" id="sujet" name="sujet">
+                <select style="font-size: 20px;margin: 20px;" id="sujet" name="sujet" required>
                     <option value="">choississer un sujet</option>
                     {% for sujet in sujets %}
                     <option value="{{ sujet.id }}">{{ sujet.title }}</option>
@@ -20,7 +20,7 @@
                 </select>
             </div>
             <div>
-                <textarea name="message" rows="10" cols="60"></textarea>
+                <textarea name="message" rows="10" cols="60" required></textarea>
             </div>
             <div>
                 <button style="font-size: 1.25em">Valider</button>

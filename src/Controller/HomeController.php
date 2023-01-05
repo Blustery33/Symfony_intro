@@ -79,18 +79,18 @@ class HomeController extends AbstractController
      */
     public function message(Request $request, SujetRepository $sujetRepository,MessageRepository $messageRepository, EntityManagerInterface $entity): Response
     {
-        $sujet = $sujetRepository->findAll();
+        $sujetAll = $sujetRepository->findAll();
         $messageAll = $messageRepository->findAll();
         $sujetId = $request->request->get('sujet');
         $messageText = $request->request->get('message');
 
-        $s = $sujetRepository->findBy(['id' => $sujetId]);
+        $sujet = $sujetRepository->findBy(['id' => $sujetId]);
 
         $message = new Message();
         if(!empty($messageText)){
             $message->setText($messageText);
             $message->setCreatedAt(new DateTimeImmutable('now'));
-            $message->setSujet($s[0]);
+            $message->setSujet($sujet[0]);
             $message->setUser($this->getUser());
 
             $entity->persist($message);
@@ -98,7 +98,7 @@ class HomeController extends AbstractController
         }
 
         return $this->render('home/message.html.twig', [
-            'sujets' => $sujet,
+            'sujets' => $sujetAll,
             'messages' => $messageAll,
 
         ]);
