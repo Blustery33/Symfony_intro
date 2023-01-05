@@ -28,24 +28,10 @@ class HomeController extends AbstractController
     /**
      * @Route("/liste", name="_liste")
      */
-    public function index(SujetRepository $sujetRepository, EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
+    public function index(SujetRepository $sujetRepository, EntityManagerInterface $em): Response
     {
 
         $sujet = $sujetRepository->findAll();
-
-//        $user = new User();
-//        $user->setEmail('mathis@gmail.com');
-//        $plaintextPassword = 'mathis';
-//        $hashedPassword = $passwordHasher->hashPassword(
-//            $user,
-//            $plaintextPassword
-//        );
-//        $user->setPassword($hashedPassword);
-//        $user->setRoles(["ROLE_USER","ROLE_ADMIN"]);
-//        $em->persist($user);
-//        $em->flush();
-
-
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',

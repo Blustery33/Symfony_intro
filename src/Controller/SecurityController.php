@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -12,8 +15,26 @@ class SecurityController extends AbstractController
     /**
      * @Route("/", name="app_login")
      */
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils, EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
     {
+        // Décommenter ceci //
+
+//        $user = new User();
+        // valeur à changer //
+//        $user->setEmail('loic@gmail.com');
+        // valeur à changer //
+//        $plaintextPassword = 'loic';
+//        $hashedPassword = $passwordHasher->hashPassword(
+//            $user,
+//            $plaintextPassword
+//        );
+//        $user->setPassword($hashedPassword);
+//        $user->setRoles(["ROLE_USER","ROLE_ADMIN"]);
+//        $em->persist($user);
+//        $em->flush();
+
+        // END n'oubliez pas de re commenter pour ne pas créer un utilisateur en boucle //
+
          if ($this->getUser()) {
              return $this->redirectToRoute('app_accueil_liste');
          }
