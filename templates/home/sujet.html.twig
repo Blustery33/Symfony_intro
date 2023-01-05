@@ -3,7 +3,11 @@
 {% block title %}Créer un sujet{% endblock %}
 
 {% block body %}
-    <a href="{{path('app_home_index')}}" style="font-size: 1.75rem">Accueil</a>
+    <div style="display: flex;justify-content: space-between">
+        <a class="a-accueil" href="{{path('app_accueil_liste')}}" style="font-size: 1.75rem">Accueil</a>
+        <a class="a-accueil" href="{{path('app_accueil_profile')}}"><i class="icon-user fa-solid fa-user"></i></a>
+    </div>
+
     <div style="text-align: center"><h1>Créer un sujet</h1></div>
 
     <div style="text-align: center">

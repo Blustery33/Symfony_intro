@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <a class="a-accueil" href="{{path('app_accueil_liste')}}" style="font-size: 1.75rem">Accueil</a>
+    <h1 style="text-align: center;font-size: 3rem">Tous vos messages</h1>
+    <br>
+        {% for message in messages %}
+            {% if app.user.id == message.user.id %}
+                <div class="message-profile">{{ message.text }}</br>Sujet : {{ message.sujet.title }} </br>Créer le : {{ message.createdAt|date("d/m/Y")}}
+                    </br> <button><a href="{{path('app_accueil_home_message_modify', { id: message.id })}}">Modifier</a></button>
+                </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+{% endblock %}

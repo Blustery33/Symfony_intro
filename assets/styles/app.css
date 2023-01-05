@@ -1,3 +1,36 @@
 body {
-    background-color: white;
+    background-color: gray;
+}
+.icon-user{
+    color: black;
+    font-size: 3rem;
+    display: flex;
+    justify-content: end;
+}
+.a-accueil{
+    text-decoration: none;
+    color: yellow;
+}
+.a-accueil:hover{
+    color: black;
+}
+li{
+    list-style: none;
+}
+.lien-creation{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.sujet-li{
+    background-color: red;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.message-profile{
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 25px;
 }
