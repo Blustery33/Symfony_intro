@@ -4,7 +4,7 @@ Exercice symfony 2itech
 Cloner le repo
 
 Copier/coller votre env. en env.local
-changer la ligne "DATABASE_URL=mysql://root:root@127.0.0.1:3306/intro2itech" avec vos infos
+changer la ligne "DATABASE_URL=mysql://Utilisateur:MotDePasse@127.0.0.1:3306/NomDeVotreBDD" avec vos infos
 
 Dans le terminal faite un "composer install" et "yarn install"
 
