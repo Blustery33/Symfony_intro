@@ -51,7 +51,6 @@ class SecurityController extends AbstractController
             if(!str_contains($createEmail, '@')){
                 $this->addFlash('error', 'Votre Email doit contenir un "@"');
             }else{
-                dump('ok');
                 $user = new User();
                 $user->setEmail($createEmail);
 
