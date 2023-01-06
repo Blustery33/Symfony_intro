@@ -47,10 +47,10 @@ class SecurityController extends AbstractController
         $createPassword = $request->request->get('create_password');
         $createEmail = $request->request->get('create_email');
 
-        if($createPassword && $createEmail){
+        if($createEmail){
             if(!str_contains($createEmail, '@')){
                 $this->addFlash('error', 'Votre Email doit contenir un "@"');
-            }else{
+            }elseif($createEmail && $createPassword){
                 $user = new User();
                 $user->setEmail($createEmail);
 
