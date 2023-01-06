@@ -3,7 +3,8 @@
 {% block title %}Hello{% endblock %}
 
 {% block body %}
-    <div><a class="a-accueil" href="{{path('app_accueil_profile')}}"><i class="icon-user fa-solid fa-user"></i></a></div>
+    <div><a style="font-size: 1.5rem;margin-right: 30px;margin-top: 10px; color: darkblue" class="a-accueil" href="{{ path('app_logout') }}">Déconnexion</a></div>
+    <div class="icon-user"><a style="color: black" class="a-accueil" href="{{path('app_accueil_profile')}}"><i class="fa-solid fa-user"></i></a></div>
     <div class="lien-creation">
         <div><a class="a-accueil" href="{{path('app_accueil_home_sujet')}}">Créer un sujet</a></div>
         <div><a class="a-accueil" href="{{ path('app_accueil_home_message') }}">Créer un message</a></div>

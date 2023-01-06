@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un compte{% endblock %}
+
+{% block body %}
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" method="post">
+                {% for category, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div style="color: red" class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                <p>Inscription</p>
+                <input class="form-control" name="create_email" type="text" placeholder="Email"/>
+                <input class="form-control" name="create_password" type="password" placeholder="Mot de passe"/>
+                <button>Créer votre compte</button>
+                <p class="message">Vous avez déjà un compte ? <a href="{{path('app_login')}}">Identifiez-vous</a></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

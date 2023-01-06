@@ -4,6 +4,7 @@
 
 {% block body %}
     <a class="a-accueil" href="{{path('app_accueil_liste')}}" style="font-size: 1.75rem">Accueil</a>
+    <div><a style="font-size: 1.5rem;margin-right: 30px;margin-top: 10px; color: darkblue" class="a-accueil" href="{{ path('app_logout') }}">Déconnexion</a></div>
     <h1 style="text-align: center;font-size: 3rem">Tous vos messages</h1>
     <br>
         {% for message in messages %}
